@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>Blog_detail</b></title>
+</head>
+<body>
+    <p><b>{{blog.title}}</b></p>
+        <p><b>Written by</b>:{{blog.author}} at:{{blog.created_date}}</p>
+        <p>{{blog.content}}</p>
+        <p><b>status</b>:{{blog.status}}</p>
+        <p><b>updated_at</b>:{{blog.updated_at}}</p>
+        {% if user == blog.author %}
+             <a href="{% url 'edit_blog' blog.slug %}">Edit</a>
+             <a href="{% url 'del_blog' blog.slug %}">Delete</a>
+        {% endif %}
+    
+    
+</body>
+</html>
